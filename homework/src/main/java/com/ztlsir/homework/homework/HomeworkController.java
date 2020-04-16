@@ -1,15 +1,27 @@
 package com.ztlsir.homework.homework;
 
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.ztlsir.homework.homework.command.CreateCommand;
+import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
+import java.util.Map;
+
+import static org.springframework.http.HttpStatus.CREATED;
+import static com.google.common.collect.ImmutableMap.of;
 
 @RestController
 @RequestMapping(value = "/homeworks")
 public class HomeworkController {
 
-    private final HomeworkApplicationService homeworkApplicationService;
+    private final HomeworkApplicationService applicationService;
 
-    public HomeworkController(HomeworkApplicationService homeworkApplicationService) {
-        this.homeworkApplicationService = homeworkApplicationService;
+    public HomeworkController(HomeworkApplicationService applicationService) {
+        this.applicationService = applicationService;
+    }
+
+    @PostMapping
+    @ResponseStatus(CREATED)
+    public Map<String, String> create(@RequestBody @Valid CreateCommand command) {
+        return of("id", applicationService.create(command));
     }
 }
