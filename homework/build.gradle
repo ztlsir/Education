@@ -1,21 +1,48 @@
+import java.time.ZoneId
+import java.time.ZonedDateTime
+
 plugins {
 	id 'org.springframework.boot' version '2.2.6.RELEASE'
 	id 'io.spring.dependency-management' version '1.0.9.RELEASE'
 	id 'java'
+	id 'idea'
 }
 
-group = 'com.example'
+group = 'com.ztlsir'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '1.8'
 
+def gitRevision = "git rev-parse HEAD".execute().text.trim()
+def gitBranch = "git rev-parse --abbrev-ref HEAD".execute().text.trim()
+def javaVersion = System.getProperties().getProperty("java.version").trim()
+def buildDate = (ZonedDateTime.now((ZoneId.of("Asia/Shanghai")))).toString()
+
+jar {
+	version = version
+	manifest {
+		attributes(
+				"Git-Revision": gitRevision,
+				"Git-Branch": gitBranch,
+				"Build-Date": buildDate,
+				"X-Compile-Source-JDK": javaVersion,
+				"X-Compile-Target-JDK": javaVersion
+		)
+	}
+}
+
 repositories {
-	mavenCentral()
+	maven { url "https://maven.aliyun.com/repository/central" }
 }
 
 dependencies {
+	compileOnly 'org.projectlombok:lombok:1.18.2'
+	annotationProcessor 'org.projectlombok:lombok:1.18.2'
+
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+
 	runtimeOnly 'com.h2database:h2'
 	testImplementation('org.springframework.boot:spring-boot-starter-test') {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
