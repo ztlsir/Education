@@ -11,8 +11,8 @@ public class HomeworkFactory {
         this.idGenerator = idGenerator;
     }
 
-    public Homework create(ClassAndGrade classAndGrade, String teacherId) {
+    public Homework create(ClassAndGrade classAndGrade, String teacherId,String content) {
         String homeworkId = idGenerator.generate();
-        return Homework.create(homeworkId,classAndGrade,teacherId);
+        return Homework.create(homeworkId,classAndGrade,teacherId,content);
     }
 }

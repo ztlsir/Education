@@ -5,6 +5,7 @@ import lombok.Builder;
 import lombok.Getter;
 
 import java.time.Instant;
+
 import static java.time.Instant.now;
 
 @Getter
@@ -14,13 +15,19 @@ public class Homework {
     private ClassAndGrade classAndGrade;
     private String teacherId;
     private Instant createdAt;
+    private String content;
 
-    public static Homework create(String id, ClassAndGrade classAndGrade,String teacherId) {
+    public static Homework create(
+            String id,
+            ClassAndGrade classAndGrade,
+            String teacherId,
+            String content) {
         Homework homework = Homework.builder()
                 .id(id)
                 .classAndGrade(classAndGrade)
                 .teacherId(teacherId)
                 .createdAt(now())
+                .content(content)
                 .build();
         return homework;
     }
