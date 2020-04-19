@@ -24,4 +24,9 @@ public class HomeworkController {
     public Map<String, String> create(@RequestBody @Valid CreateCommand command) {
         return of("id", applicationService.create(command));
     }
+
+    @GetMapping("/hello")
+    public String hello() {
+        return "Hello World";
+    }
 }
