@@ -6,6 +6,7 @@ plugins {
 	id 'io.spring.dependency-management' version '1.0.9.RELEASE'
 	id 'java'
 	id 'idea'
+	id 'com.avast.gradle.docker-compose' version "0.10.10"
 }
 
 group = 'com.ztlsir'
@@ -55,3 +56,5 @@ dependencies {
 test {
 	useJUnitPlatform()
 }
+
+apply from: "${projectDir}/gradle/docker-compose/docker-compose.gradle"

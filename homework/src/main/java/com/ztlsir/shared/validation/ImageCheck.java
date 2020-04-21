@@ -1,6 +1,6 @@
-package com.ztlsir.shared.model.validation;
+package com.ztlsir.shared.validation;
 
-import com.ztlsir.shared.model.validation.Impl.ImageCheckImpl;
+import com.ztlsir.shared.validation.Impl.ImageCheckImpl;
 
 import javax.validation.Constraint;
 import javax.validation.Payload;

@@ -1,6 +1,6 @@
 package com.ztlsir.homework.file.Command;
 
-import com.ztlsir.shared.model.validation.ImageCheck;
+import com.ztlsir.shared.validation.ImageCheck;
 import lombok.Value;
 import org.springframework.web.multipart.MultipartFile;
 

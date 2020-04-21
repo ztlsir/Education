@@ -1,4 +1,4 @@
-package com.ztlsir.shared.model.validation.Impl;
+package com.ztlsir.shared.validation.Impl;
 
 import org.springframework.web.multipart.MultipartFile;
 
