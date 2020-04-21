@@ -1,5 +1,6 @@
 package com.ztlsir.homework.file.model;
 
+import com.ztlsir.homework.file.Representation.model.FileRepresentation;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
@@ -29,5 +30,13 @@ public class File {
                 .contentType(contentType)
                 .size(size)
                 .build();
+    }
+
+    public FileRepresentation toRepresentation() {
+        return new FileRepresentation(
+                this.getName(),
+                this.getContent().getData(),
+                this.getContentType(),
+                this.getSize());
     }
 }

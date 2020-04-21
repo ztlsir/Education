@@ -1,13 +1,11 @@
 package com.ztlsir.homework.file;
 
+import com.ztlsir.homework.file.Command.UploadImageCommand;
 import com.ztlsir.homework.file.model.File;
 import lombok.SneakyThrows;
 import lombok.var;
 import org.bson.types.Binary;
 import org.springframework.stereotype.Component;
-import org.springframework.web.multipart.MultipartFile;
-
-import java.io.IOException;
 
 @Component
 public class FileApplicationService {
@@ -18,8 +16,9 @@ public class FileApplicationService {
     }
 
     @SneakyThrows
-    public String saveImage(MultipartFile file) {
+    public String saveImage(UploadImageCommand command) {
 
+        var file = command.getFile();
         var uploadFile = File.create(
                 file.getOriginalFilename(),
                 new Binary(file.getBytes()),

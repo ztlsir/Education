@@ -17,4 +17,8 @@ public class FileRepository extends BaseRepository<File> {
     protected void doSave(File file) {
         mongoTemplate.save(file);
     }
+
+    public File GetById(String id) {
+        return mongoTemplate.findById(id, File.class);
+    }
 }
