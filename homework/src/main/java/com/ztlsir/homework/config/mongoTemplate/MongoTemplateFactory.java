@@ -25,7 +25,6 @@ public class MongoTemplateFactory {
         return new MongoTemplate(mongoDbFactory(config.getDataDBUri()));
     }
 
-    @Primary
     @Bean(name = MongoTemplateFactory.FILE_DATABASE_INJECT_NAME)
     public MongoTemplate getFileMongoTemplate() throws Exception {
         return new MongoTemplate(mongoDbFactory(config.getFileDBUri()));

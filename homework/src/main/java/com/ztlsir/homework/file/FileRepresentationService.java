@@ -1,8 +1,6 @@
 package com.ztlsir.homework.file;
 
 import com.ztlsir.homework.file.Representation.model.FileRepresentation;
-import lombok.var;
-import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.stereotype.Component;
 
 @Component

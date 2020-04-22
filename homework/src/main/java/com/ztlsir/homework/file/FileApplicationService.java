@@ -18,12 +18,12 @@ public class FileApplicationService {
     @SneakyThrows
     public String saveImage(UploadImageCommand command) {
 
-        var file = command.getFile();
+        var multipartFile = command.getMultipartFile();
         var uploadFile = File.create(
-                file.getOriginalFilename(),
-                new Binary(file.getBytes()),
-                file.getContentType(),
-                file.getSize());
+                multipartFile.getOriginalFilename(),
+                new Binary(multipartFile.getBytes()),
+                multipartFile.getContentType(),
+                multipartFile.getSize());
 
         fileRepository.save(uploadFile);
 

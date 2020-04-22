@@ -1,10 +1,10 @@
 package com.ztlsir.homework.config.mongoTemplate;
 
-import lombok.Value;
+import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
-@Value
+@Data
 @Component
 @ConfigurationProperties(prefix = "spring.data.mongodb")
 public class MongoTemplateConfig {

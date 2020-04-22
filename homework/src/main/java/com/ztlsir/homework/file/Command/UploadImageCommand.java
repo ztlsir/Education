@@ -10,5 +10,5 @@ import javax.validation.constraints.NotNull;
 public class UploadImageCommand {
     @NotNull
     @ImageCheck(message = "请上传正确的图片")
-    private MultipartFile file;
+    private MultipartFile multipartFile;
 }
