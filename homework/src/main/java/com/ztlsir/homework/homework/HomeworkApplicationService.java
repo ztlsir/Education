@@ -8,13 +8,16 @@ import org.springframework.stereotype.Component;
 @Component
 public class HomeworkApplicationService {
     private HomeworkFactory homeworkFactory;
+    private HomeworkRepository homeworkRepository;
 
-    public HomeworkApplicationService(HomeworkFactory homeworkFactory) {
+    public HomeworkApplicationService(HomeworkFactory homeworkFactory, HomeworkRepository homeworkRepository) {
         this.homeworkFactory = homeworkFactory;
+        this.homeworkRepository = homeworkRepository;
     }
 
     public String create(CreateCommand command) {
         var homework = homeworkFactory.create(command.classAndGrade, command.teacherId, command.content);
+        homeworkRepository.save(homework);
 
         return homework.getId();
     }
