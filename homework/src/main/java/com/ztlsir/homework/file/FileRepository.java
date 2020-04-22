@@ -9,6 +9,8 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class FileRepository extends BaseRepository<File> {
+    private static final String FILE_COLLECTION_NAME = "files";
+
     private final MongoTemplate mongoTemplate;
 
     public FileRepository(@Qualifier(MongoTemplateFactory.FILE_DATABASE_INJECT_NAME) MongoTemplate mongoTemplate) {
@@ -17,10 +19,10 @@ public class FileRepository extends BaseRepository<File> {
 
     @Override
     protected void doSave(File file) {
-        mongoTemplate.save(file);
+        mongoTemplate.save(file, FileRepository.FILE_COLLECTION_NAME);
     }
 
     public File GetById(String id) {
-        return mongoTemplate.findById(id, File.class);
+        return mongoTemplate.findById(id, File.class, FileRepository.FILE_COLLECTION_NAME);
     }
 }

@@ -1,16 +1,16 @@
 package com.ztlsir.shared.validation.Impl;
 
+import com.ztlsir.shared.validation.ImageCheck;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.imageio.ImageIO;
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 import java.awt.image.BufferedImage;
-import java.lang.annotation.Annotation;
 
-public class ImageCheckImpl implements ConstraintValidator<Annotation, MultipartFile> {
+public class ImageCheckImpl implements ConstraintValidator<ImageCheck, MultipartFile> {
 
-    public void initialize(Annotation arg0) {
+    public void initialize(ImageCheck arg0) {
     }
 
     public boolean isValid(MultipartFile multipartFile, ConstraintValidatorContext arg1) {

@@ -1,4 +1,4 @@
-version: 3
+version: "3"
 services:
   mongoDB:
     restart: always
@@ -7,8 +7,9 @@ services:
     ports:
       - 27017:27017
     environment:
-        MONGO_INITDB_ROOT_USERNAME: root
-        MONGO_INITDB_ROOT_PASSWORD: 123456
-#    volumes:
-#      - ./some-path:/data/db
-#      - ./some-init.js:/docker-entrypoint-initdb.d/some-init.js:ro
+      MONGO_INITDB_DATABASE: file
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: 123456
+    volumes:
+      - ./mongo/initdb/:/docker-entrypoint-initdb.d/:ro
+      #      - ./some-path:/data/db

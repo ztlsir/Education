@@ -1,12 +1,18 @@
 server:
   port: 802
+
 management:
   endpoints:
     web:
       exposure:
         include: "*"
+
 spring:
   data:
     mongodb:
-      fileDBUri: mongodb://root:123456@localhost:27017/file
-      dataDBUri: mongodb://root:123456@localhost:27017/data
+      fileDBUri: mongodb://homework:homework123456@localhost:27017/file
+      dataDBUri: mongodb://homework:homework123456@localhost:27017/data
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 100MB
