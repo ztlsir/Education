@@ -35,7 +35,7 @@ public class HomeworkRepresentationService {
     }
 
     public PagedResource<HomeworkRepresentation> pagedHomeworks(int pageIndex, int pageSize) {
-        var pagedHomeworks = homeworkDao.findAll(PageRequest.of(pageIndex, pageSize));
+        var pagedHomeworks = homeworkDao.findAll(PageRequest.of(pageIndex-1, pageSize));
 
         return PagedResource.of(
                 pagedHomeworks.getTotalElements(),
