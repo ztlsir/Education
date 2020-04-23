@@ -30,4 +30,6 @@ out/
 
 ### VS Code ###
 .vscode/
-*/database/*
+
+### Docker Compose ###
+**/docker-compose/**/database/
