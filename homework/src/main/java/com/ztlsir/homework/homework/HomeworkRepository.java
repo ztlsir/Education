@@ -6,6 +6,7 @@ import com.ztlsir.homework.entity.Homeworks;
 import com.ztlsir.homework.homework.model.Homework;
 import com.ztlsir.shared.model.BaseRepository;
 import lombok.SneakyThrows;
+import lombok.var;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -22,5 +23,11 @@ public class HomeworkRepository extends BaseRepository<Homework> {
     @Override
     protected void doSave(Homework homework) {
         homeworkDao.save(new Homeworks(homework.getId(), objectMapper.writeValueAsString(homework)));
+    }
+
+    @SneakyThrows
+    public Homework byId(String id) {
+        var homeworkDB = homeworkDao.findById(id).get();
+        return objectMapper.readValue(homeworkDB.getJsonContent(), Homework.class);
     }
 }

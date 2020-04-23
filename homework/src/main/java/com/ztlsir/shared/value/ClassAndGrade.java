@@ -1,4 +1,4 @@
-package com.ztlsir.shared.model;
+package com.ztlsir.shared.value;
 
 import lombok.Value;
 
