@@ -12,4 +12,20 @@ services:
       MONGO_INITDB_ROOT_PASSWORD: 123456
     volumes:
       - ./mongo/initdb/:/docker-entrypoint-initdb.d/:ro
-      #      - ./some-path:/data/db
+      - ./mongo/database:/data/db
+  db:
+    restart: always
+    container_name: ztlsir-homework-mysql
+    image: mysql
+    command: [
+      '--character-set-server=utf8mb4',
+      '--collation-server=utf8mb4_unicode_ci',
+      '--default-time-zone=+8:00',
+    ]
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: 123456
+        volumes:
+          - ./mysql/initdb/:/docker-entrypoint-initdb.d/:ro
+          - ./mysql/database:/data/db

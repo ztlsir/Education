@@ -16,6 +16,7 @@ public class Homework {
     private String teacherId;
     private Instant createdAt;
     private String content;
+    private HomeworkStatus status;
 
     public static Homework create(
             String id,
@@ -28,6 +29,7 @@ public class Homework {
                 .teacherId(teacherId)
                 .createdAt(now())
                 .content(content)
+                .status(HomeworkStatus.EDIT)
                 .build();
         return homework;
     }
