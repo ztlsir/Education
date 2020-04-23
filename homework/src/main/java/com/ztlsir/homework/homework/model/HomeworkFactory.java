@@ -1,6 +1,6 @@
 package com.ztlsir.homework.homework.model;
 
-import com.ztlsir.shared.model.ClassAndGrade;
+import com.ztlsir.shared.value.ClassAndGrade;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -11,7 +11,7 @@ public class HomeworkFactory {
         this.idGenerator = idGenerator;
     }
 
-    public Homework create(ClassAndGrade classAndGrade, String teacherId,String content) {
+    public Homework create(ClassAndGrade classAndGrade, String teacherId, String content) {
         String homeworkId = idGenerator.generate();
         return Homework.create(homeworkId,classAndGrade,teacherId,content);
     }

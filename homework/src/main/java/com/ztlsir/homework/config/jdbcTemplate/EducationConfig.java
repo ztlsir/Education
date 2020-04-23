@@ -7,7 +7,6 @@ import org.springframework.boot.autoconfigure.orm.jpa.JpaProperties;
 import org.springframework.boot.orm.jpa.EntityManagerFactoryBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Primary;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
@@ -23,45 +22,42 @@ import java.util.Map;
 @EnableJpaRepositories(
         entityManagerFactoryRef = "entityManagerFactoryEducation",
         transactionManagerRef = "transactionManagerEducation",
-        basePackages = {"com.ztlsir.education.entity"})
+        basePackages = {"com.ztlsir.education.dao"})
 public class EducationConfig {
-    private DataSource primaryDataSource;
+    private DataSource dataSource;
     private JpaProperties jpaProperties;
     private HibernateProperties hibernateProperties;
 
     public EducationConfig(
-            @Qualifier("education") DataSource primaryDataSource,
+            @Qualifier("education") DataSource dataSource,
             JpaProperties jpaProperties,
             HibernateProperties hibernateProperties) {
-        this.primaryDataSource = primaryDataSource;
+        this.dataSource = dataSource;
         this.jpaProperties = jpaProperties;
         this.hibernateProperties = hibernateProperties;
     }
 
-    @Primary
     @Bean(name = "entityManagerEducation")
     public EntityManager entityManager(EntityManagerFactoryBuilder builder) {
         return entityManagerFactory(builder).getObject().createEntityManager();
     }
 
-    @Primary
     @Bean(name = "entityManagerFactoryEducation")
     public LocalContainerEntityManagerFactoryBean entityManagerFactory(EntityManagerFactoryBuilder builder) {
         return builder
-                .dataSource(primaryDataSource)
-                .properties(getVendorProperties(primaryDataSource))
-                .packages("com.ztlsir.education.dao")
+                .dataSource(dataSource)
+                .properties(getVendorProperties())
+                .packages("com.ztlsir.education.entity")
                 .persistenceUnit("educationPersistenceUnit")
                 .build();
     }
 
-    @Primary
     @Bean(name = "transactionManagerEducation")
     public PlatformTransactionManager transactionManager(EntityManagerFactoryBuilder builder) {
         return new JpaTransactionManager(entityManagerFactory(builder).getObject());
     }
 
-    private Map<String, Object> getVendorProperties(DataSource dataSource) {
+    private Map<String, Object> getVendorProperties() {
         return hibernateProperties.determineHibernateProperties(
                 jpaProperties.getProperties(), new HibernateSettings());
     }

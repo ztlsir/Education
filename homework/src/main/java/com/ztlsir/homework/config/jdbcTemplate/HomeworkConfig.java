@@ -23,17 +23,17 @@ import java.util.Map;
 @EnableJpaRepositories(
         entityManagerFactoryRef = "entityManagerFactoryHomework",
         transactionManagerRef = "transactionManagerHomework",
-        basePackages = {"com.ztlsir.homework.entity"})
+        basePackages = {"com.ztlsir.homework.dao"})
 public class HomeworkConfig {
-    private DataSource primaryDataSource;
+    private DataSource dataSource;
     private JpaProperties jpaProperties;
     private HibernateProperties hibernateProperties;
 
     public HomeworkConfig(
-            @Qualifier("homework") DataSource primaryDataSource,
+            @Qualifier("homework") DataSource dataSource,
             JpaProperties jpaProperties,
             HibernateProperties hibernateProperties) {
-        this.primaryDataSource = primaryDataSource;
+        this.dataSource = dataSource;
         this.jpaProperties = jpaProperties;
         this.hibernateProperties = hibernateProperties;
     }
@@ -48,9 +48,9 @@ public class HomeworkConfig {
     @Bean(name = "entityManagerFactoryHomework")
     public LocalContainerEntityManagerFactoryBean entityManagerFactory(EntityManagerFactoryBuilder builder) {
         return builder
-                .dataSource(primaryDataSource)
-                .properties(getVendorProperties(primaryDataSource))
-                .packages("com.ztlsir.homework.dao")
+                .dataSource(dataSource)
+                .properties(getVendorProperties())
+                .packages("com.ztlsir.homework.entity")
                 .persistenceUnit("homeworkPersistenceUnit")
                 .build();
     }
@@ -61,7 +61,7 @@ public class HomeworkConfig {
         return new JpaTransactionManager(entityManagerFactory(builder).getObject());
     }
 
-    private Map<String, Object> getVendorProperties(DataSource dataSource) {
+    private Map<String, Object> getVendorProperties() {
         return hibernateProperties.determineHibernateProperties(
                 jpaProperties.getProperties(), new HibernateSettings());
     }

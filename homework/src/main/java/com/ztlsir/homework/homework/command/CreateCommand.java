@@ -1,6 +1,6 @@
 package com.ztlsir.homework.homework.command;
 
-import com.ztlsir.shared.model.ClassAndGrade;
+import com.ztlsir.shared.value.ClassAndGrade;
 import lombok.Value;
 
 @Value
