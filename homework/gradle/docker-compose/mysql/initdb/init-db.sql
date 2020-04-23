@@ -13,10 +13,9 @@ go
 -- 创建homeworks表
 CREATE TABLE homeworks
 (
-  ID           VARCHAR(32) NOT NULL,
+  ID           VARCHAR(64) NOT NULL,
   JSON_CONTENT JSON        NOT NULL,
   STATUS       VARCHAR(10) GENERATED ALWAYS AS (JSON_CONTENT ->> '$.status') VIRTUAL,
-  CREATED_AT   BIGINT GENERATED ALWAYS AS (JSON_CONTENT ->> '$.createdAt') VIRTUAL,
   PRIMARY KEY (ID)
 ) CHARACTER SET utf8mb4
   COLLATE utf8mb4_unicode_ci;
