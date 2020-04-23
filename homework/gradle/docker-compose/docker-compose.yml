@@ -13,7 +13,7 @@ services:
     volumes:
       - ./mongo/initdb/:/docker-entrypoint-initdb.d/:ro
       - ./mongo/database:/data/db
-  db:
+  mysqlDB:
     restart: always
     container_name: ztlsir-homework-mysql
     image: mysql
@@ -26,6 +26,6 @@ services:
       - 3306:3306
     environment:
       MYSQL_ROOT_PASSWORD: 123456
-        volumes:
-          - ./mysql/initdb/:/docker-entrypoint-initdb.d/:ro
-          - ./mysql/database:/data/db
+    volumes:
+      - ./mysql/initdb/:/docker-entrypoint-initdb.d/:ro
+      - ./mysql/database:/data/db
