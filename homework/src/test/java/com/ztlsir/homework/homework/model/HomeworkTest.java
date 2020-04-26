@@ -6,8 +6,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-@SpringBootTest
-class HomeworkApplicationTests {
+class HomeworkTest {
 
 	@Test
 	public void should_create_homework() {
