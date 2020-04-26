@@ -19,7 +19,7 @@ task apiTest(type: Test) {
     group = 'verification'
     testClassesDirs = sourceSets.apiTest.output.classesDirs
     classpath = sourceSets.apiTest.runtimeClasspath
-    shouldRunAfter test
+    shouldRunAfter componentTest
 }
 
 check.dependsOn apiTest
