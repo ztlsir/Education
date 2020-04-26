@@ -1,8 +1,8 @@
 spring:
   data:
     mongodb:
-      fileDBUri: mongodb://homework:123456@localhost:27017/file
-      dataDBUri: mongodb://homework:123456@localhost:27017/data
+      fileDBUri: mongodb://homework:123456@localhost:27016/file
+      dataDBUri: mongodb://homework:123456@localhost:27016/data
   jpa:
     database-platform: org.hibernate.dialect.H2Dialect
   data-source:

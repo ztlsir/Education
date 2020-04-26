@@ -1,0 +1,17 @@
+version: "3"
+services:
+  mongoDB:
+    restart: always
+    container_name: ztlsir-homework-mongodb
+    image: mongo
+    command: [
+      'mongod',
+      '--port 27016']
+    ports:
+      - 27016:27016
+    environment:
+      MONGO_INITDB_DATABASE: file
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: 123456
+    volumes:
+      - ./mongo/initdb/:/docker-entrypoint-initdb.d/:ro

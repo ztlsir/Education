@@ -1,0 +1,35 @@
+sourceSets {
+    componentTest {
+        compileClasspath += sourceSets.main.output + sourceSets.test.output
+        runtimeClasspath += sourceSets.main.output + sourceSets.test.output
+    }
+}
+
+configurations {
+    componentTestImplementation.extendsFrom testImplementation
+    componentTestRuntimeOnly.extendsFrom testRuntimeOnly
+}
+
+configurations.componentTestImplementation.setCanBeResolved(true)
+configurations.componentTestRuntimeOnly.setCanBeResolved(true)
+
+task componentTest(type: Test) {
+    useJUnitPlatform()
+    description = 'Run component tests.'
+    group = 'verification'
+    testClassesDirs = sourceSets.componentTest.output.classesDirs
+    classpath = sourceSets.componentTest.runtimeClasspath
+    shouldRunAfter test
+}
+
+check.dependsOn componentTest
+componentTest.dependsOn mongoTestComposeUp
+
+idea {
+    module {
+        testSourceDirs += file('src/componentTest/java')
+        testSourceDirs += file('src/componentTest/resources')
+        scopes.TEST.plus += [configurations.componentTestImplementation]
+        scopes.TEST.plus += [configurations.componentTestRuntimeOnly]
+    }
+}
