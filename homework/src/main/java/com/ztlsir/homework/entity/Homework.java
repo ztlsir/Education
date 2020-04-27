@@ -4,14 +4,16 @@ import lombok.Getter;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
 @Getter
-public class Homeworks {
-    public Homeworks() {
+@Table(name="Homeworks")
+public class Homework {
+    public Homework() {
     }
 
-    public Homeworks(String id, String jsonContent) {
+    public Homework(String id, String jsonContent) {
         this.id = id;
         this.jsonContent = jsonContent;
     }

@@ -1,9 +1,7 @@
 package com.ztlsir.homework.homework;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.ztlsir.homework.dao.HomeworkDao;
-import com.ztlsir.homework.entity.Homeworks;
 import com.ztlsir.homework.homework.Representation.model.HomeworkRepresentation;
 import com.ztlsir.shared.model.PagedResource;
 import lombok.SneakyThrows;
@@ -11,7 +9,6 @@ import lombok.var;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Component;
 
-import java.util.function.Function;
 import java.util.stream.Collectors;
 
 @Component

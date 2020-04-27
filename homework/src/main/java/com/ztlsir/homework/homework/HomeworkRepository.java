@@ -2,15 +2,14 @@ package com.ztlsir.homework.homework;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.ztlsir.homework.dao.HomeworkDao;
-import com.ztlsir.homework.entity.Homeworks;
-import com.ztlsir.homework.homework.model.Homework;
+import com.ztlsir.homework.entity.Homework;
 import com.ztlsir.shared.model.BaseRepository;
 import lombok.SneakyThrows;
 import lombok.var;
 import org.springframework.stereotype.Component;
 
 @Component
-public class HomeworkRepository extends BaseRepository<Homework> {
+public class HomeworkRepository extends BaseRepository<com.ztlsir.homework.homework.model.Homework> {
     private final HomeworkDao homeworkDao;
     private final ObjectMapper objectMapper;
 
@@ -21,13 +20,13 @@ public class HomeworkRepository extends BaseRepository<Homework> {
 
     @SneakyThrows
     @Override
-    protected void doSave(Homework homework) {
-        homeworkDao.save(new Homeworks(homework.getId(), objectMapper.writeValueAsString(homework)));
+    protected void doSave(com.ztlsir.homework.homework.model.Homework homework) {
+        homeworkDao.save(new Homework(homework.getId(), objectMapper.writeValueAsString(homework)));
     }
 
     @SneakyThrows
-    public Homework byId(String id) {
+    public com.ztlsir.homework.homework.model.Homework byId(String id) {
         var homeworkDB = homeworkDao.findById(id).get();
-        return objectMapper.readValue(homeworkDB.getJsonContent(), Homework.class);
+        return objectMapper.readValue(homeworkDB.getJsonContent(), com.ztlsir.homework.homework.model.Homework.class);
     }
 }
