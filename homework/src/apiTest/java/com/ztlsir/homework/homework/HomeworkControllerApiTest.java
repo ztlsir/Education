@@ -16,7 +16,7 @@ import static org.springframework.boot.test.context.SpringBootTest.WebEnvironmen
 
 @ExtendWith(SpringExtension.class)
 @SpringBootTest(webEnvironment = RANDOM_PORT)
-public class HomeworkControllerTest extends BaseApiTest {
+public class HomeworkControllerApiTest extends BaseApiTest {
     @Autowired
     private HomeworkRepository homeworkRepository;
 
