@@ -1,0 +1,26 @@
+task jacocoAllTestReport(type: JacocoReport) {
+    executionData test, apiTest, componentTest
+    sourceSets sourceSets.main
+}
+
+task jacocoAllTestCoverageVerification(type: JacocoCoverageVerification) {
+    shouldRunAfter check
+    executionData test, componentTest, apiTest
+    sourceSets sourceSets.main
+    violationRules {
+        rule {
+            element = 'BUNDLE'
+            limit {
+                counter = 'INSTRUCTION'
+                minimum = 0.68
+            }
+        }
+        rule {
+            element = 'BUNDLE'
+            limit {
+                counter = 'BRANCH'
+                minimum = 0.00
+            }
+        }
+    }
+}
