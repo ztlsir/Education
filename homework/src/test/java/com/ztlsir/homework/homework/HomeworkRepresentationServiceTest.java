@@ -33,7 +33,6 @@ import static java.util.TimeZone.getTimeZone;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.when;
 
-@Component
 @ContextConfiguration(
         classes = ObjectMapper.class)
 @ExtendWith(SpringExtension.class)
