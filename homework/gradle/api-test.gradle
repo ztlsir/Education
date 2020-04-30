@@ -15,7 +15,7 @@ configurations.apiTestRuntimeOnly.setCanBeResolved(true)
 
 task apiTest(type: Test) {
     useJUnitPlatform()
-    description = 'Run component tests.'
+    description = 'Run api tests.'
     group = 'verification'
     testClassesDirs = sourceSets.apiTest.output.classesDirs
     classpath = sourceSets.apiTest.runtimeClasspath

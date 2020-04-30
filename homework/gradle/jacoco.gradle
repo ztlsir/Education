@@ -1,10 +1,11 @@
 task jacocoAllTestReport(type: JacocoReport) {
+    shouldRunAfter check
     executionData test, apiTest, componentTest
     sourceSets sourceSets.main
 }
 
 task jacocoAllTestCoverageVerification(type: JacocoCoverageVerification) {
-    shouldRunAfter check
+    shouldRunAfter jacocoAllTestReport
     executionData test, componentTest, apiTest
     sourceSets sourceSets.main
     violationRules {
@@ -24,3 +25,6 @@ task jacocoAllTestCoverageVerification(type: JacocoCoverageVerification) {
         }
     }
 }
+
+build.dependsOn jacocoAllTestReport
+build.dependsOn jacocoAllTestCoverageVerification
