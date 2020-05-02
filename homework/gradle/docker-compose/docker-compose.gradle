@@ -1,7 +1,9 @@
 dockerCompose {
     useComposeFiles = ["${projectDir}/gradle/docker-compose/docker-compose.yml"]
+    projectName = 'homework_dev'
     mongoTest {
         useComposeFiles = ["${projectDir}/gradle/docker-compose/mongo-test-docker-compose.yml"]
+        projectName = 'homework_dev_mongo_test'
     }
 }
 
