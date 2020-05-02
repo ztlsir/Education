@@ -2,6 +2,10 @@ task jacocoAllTestReport(type: JacocoReport) {
     shouldRunAfter check
     executionData test, apiTest, componentTest
     sourceSets sourceSets.main
+    reports {
+        html.enabled false
+        xml.enabled true
+    }
 }
 
 task jacocoAllTestCoverageVerification(type: JacocoCoverageVerification) {
