@@ -4,6 +4,9 @@ services:
     restart: always
     container_name: ztlsir-homework-mongodb-test
     image: mongo
+    networks:
+      local_net:
+        ipv4_address: 172.18.0.3
     ports:
       - 27016:27017
     environment:
@@ -12,3 +15,8 @@ services:
       MONGO_INITDB_ROOT_PASSWORD: 123456
     volumes:
       - ./mongo/initdb/:/docker-entrypoint-initdb.d/:ro
+
+networks:
+  local_net:
+    external:
+      name: lan
