@@ -2,12 +2,10 @@ package com.ztlsir.homework.homework.model;
 
 import com.ztlsir.shared.value.ClassAndGrade;
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class HomeworkTest {
-
 	@Test
 	public void should_create_homework() {
 		ClassAndGrade classAndGrade =new ClassAndGrade(1,2);
