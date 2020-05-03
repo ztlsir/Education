@@ -8,3 +8,10 @@ dockerCompose {
 }
 
 bootRun.dependsOn composeUp //与isRequiredBy不同的是：使用dependsOn在关闭bootRun后MySQL不会停止，因此本地开发不用反复启动MySQL
+
+check.dependsOn mongoTestComposeUp
+build.dependsOn mongoTestComposeDown
+mongoTestComposeDown
+        {
+            shouldRunAfter check
+        }

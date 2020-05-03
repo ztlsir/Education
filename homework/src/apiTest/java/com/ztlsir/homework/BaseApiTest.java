@@ -36,7 +36,9 @@ public class BaseApiTest {
 
     protected MockMvcRequestSpecification given() {
         return RestAssuredMockMvc.given()
-                .config(RestAssuredMockMvcConfig.config().encoderConfig(new EncoderConfig().appendDefaultContentCharsetToContentTypeIfUndefined(false)))
-                .config(RestAssuredMockMvcConfig.config().logConfig(LogConfig.logConfig().enableLoggingOfRequestAndResponseIfValidationFails()));
+                .config(RestAssuredMockMvcConfig.config().encoderConfig(
+                        new EncoderConfig().appendDefaultContentCharsetToContentTypeIfUndefined(false)))
+                .config(RestAssuredMockMvcConfig.config().logConfig(
+                        LogConfig.logConfig().enableLoggingOfRequestAndResponseIfValidationFails()));
     }
 }

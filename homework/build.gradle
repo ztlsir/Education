@@ -8,6 +8,7 @@ plugins {
     id 'idea'
     id 'com.avast.gradle.docker-compose' version "0.10.10"
     id 'jacoco'
+    id 'checkstyle'
 }
 
 group = 'com.ztlsir'
@@ -62,3 +63,4 @@ apply from: "${projectDir}/gradle/docker-compose/docker-compose.gradle"
 apply from: "${projectDir}/gradle/component-test.gradle"
 apply from: "${projectDir}/gradle/api-test.gradle"
 apply from: "${projectDir}/gradle/jacoco.gradle"
+apply from: "${projectDir}/gradle/checkstyle/checkstyle.gradle"
