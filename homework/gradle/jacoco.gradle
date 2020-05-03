@@ -3,7 +3,7 @@ task jacocoAllTestReport(type: JacocoReport) {
     executionData test, apiTest, componentTest
     sourceSets sourceSets.main
     reports {
-        html.enabled false
+        html.enabled true
         xml.enabled true
     }
 }
