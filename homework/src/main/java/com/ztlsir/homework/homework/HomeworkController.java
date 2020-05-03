@@ -37,8 +37,9 @@ public class HomeworkController {
     }
 
     @GetMapping
-    public PagedResource<HomeworkRepresentation> pagedHomeworks(@RequestParam(required = false, defaultValue = "1") int pageIndex,
-                                                                @RequestParam(required = false, defaultValue = "10") int pageSize) {
+    public PagedResource<HomeworkRepresentation> pagedHomeworks(
+            @RequestParam(required = false, defaultValue = "1") int pageIndex,
+            @RequestParam(required = false, defaultValue = "10") int pageSize) {
         return representationService.pagedHomeworks(pageIndex,pageSize);
     }
 }
