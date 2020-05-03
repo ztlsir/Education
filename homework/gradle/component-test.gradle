@@ -23,13 +23,6 @@ task componentTest(type: Test) {
 }
 
 check.dependsOn componentTest
-componentTest.dependsOn mongoTestComposeUp
-
-build.dependsOn mongoTestComposeDown
-mongoTestComposeDown
-        {
-            shouldRunAfter check
-        }
 
 idea {
     module {
