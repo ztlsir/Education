@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="8.27">
+<file name="/Users/lyLiu/Documents/code/java/Education/homework/src/main/java/com/ztlsir/homework/HomeworkApplication.java">
+</file>
+<file name="/Users/lyLiu/Documents/code/java/Education/homework/src/main/java/com/ztlsir/homework/config/SwaggerConfig.java">
+</file>
+<file name="/Users/lyLiu/Documents/code/java/Education/homework/src/main/java/com/ztlsir/homework/config/jdbcTemplate/DataSourceConfig.java">
+</file>
+<file name="/Users/lyLiu/Documents/code/java/Education/homework/src/main/java/com/ztlsir/homework/config/jdbcTemplate/EducationConfig.java">
+</file>
+<file name="/Users/lyLiu/Documents/code/java/Education/homework/src/main/java/com/ztlsir/homework/config/jdbcTemplate/HomeworkConfig.java">
+</file>
+<file name="/Users/lyLiu/Documents/code/java/Education/homework/src/main/java/com/ztlsir/homework/config/mongoTemplate/MongoTemplateConfig.java">
+</file>
+<file name="/Users/lyLiu/Documents/code/java/Education/homework/src/main/java/com/ztlsir/homework/config/mongoTemplate/MongoTemplateFactory.java">
+</file>
+<file name="/Users/lyLiu/Documents/code/java/Education/homework/src/main/java/com/ztlsir/homework/dao/HomeworkDao.java">
+</file>
+<file name="/Users/lyLiu/Documents/code/java/Education/homework/src/main/java/com/ztlsir/homework/entity/Homework.java">
+</file>
+<file name="/Users/lyLiu/Documents/code/java/Education/homework/src/main/java/com/ztlsir/homework/file/Command/UploadImageCommand.java">
+</file>
+<file name="/Users/lyLiu/Documents/code/java/Education/homework/src/main/java/com/ztlsir/homework/file/FileApplicationService.java">
+</file>
+<file name="/Users/lyLiu/Documents/code/java/Education/homework/src/main/java/com/ztlsir/homework/file/FileController.java">
+</file>
+<file name="/Users/lyLiu/Documents/code/java/Education/homework/src/main/java/com/ztlsir/homework/file/FileRepository.java">
+</file>
+<file name="/Users/lyLiu/Documents/code/java/Education/homework/src/main/java/com/ztlsir/homework/file/FileRepresentationService.java">
+</file>
+<file name="/Users/lyLiu/Documents/code/java/Education/homework/src/main/java/com/ztlsir/homework/file/Representation/model/FileRepresentation.java">
+</file>
+<file name="/Users/lyLiu/Documents/code/java/Education/homework/src/main/java/com/ztlsir/homework/file/model/File.java">
+</file>
+<file name="/Users/lyLiu/Documents/code/java/Education/homework/src/main/java/com/ztlsir/homework/homework/HomeworkApplicationService.java">
+</file>
+<file name="/Users/lyLiu/Documents/code/java/Education/homework/src/main/java/com/ztlsir/homework/homework/HomeworkController.java">
+</file>
+<file name="/Users/lyLiu/Documents/code/java/Education/homework/src/main/java/com/ztlsir/homework/homework/HomeworkRepository.java">
+</file>
+<file name="/Users/lyLiu/Documents/code/java/Education/homework/src/main/java/com/ztlsir/homework/homework/HomeworkRepresentationService.java">
+</file>
+<file name="/Users/lyLiu/Documents/code/java/Education/homework/src/main/java/com/ztlsir/homework/homework/Representation/model/HomeworkRepresentation.java">
+</file>
+<file name="/Users/lyLiu/Documents/code/java/Education/homework/src/main/java/com/ztlsir/homework/homework/command/CreateCommand.java">
+</file>
+<file name="/Users/lyLiu/Documents/code/java/Education/homework/src/main/java/com/ztlsir/homework/homework/model/Homework.java">
+</file>
+<file name="/Users/lyLiu/Documents/code/java/Education/homework/src/main/java/com/ztlsir/homework/homework/model/HomeworkFactory.java">
+</file>
+<file name="/Users/lyLiu/Documents/code/java/Education/homework/src/main/java/com/ztlsir/homework/homework/model/HomeworkIdGenerator.java">
+</file>
+<file name="/Users/lyLiu/Documents/code/java/Education/homework/src/main/java/com/ztlsir/homework/homework/model/HomeworkStatus.java">
+</file>
+<file name="/Users/lyLiu/Documents/code/java/Education/homework/src/main/java/com/ztlsir/shared/model/BaseRepository.java">
+</file>
+<file name="/Users/lyLiu/Documents/code/java/Education/homework/src/main/java/com/ztlsir/shared/model/PagedResource.java">
+</file>
+<file name="/Users/lyLiu/Documents/code/java/Education/homework/src/main/java/com/ztlsir/shared/validation/ImageCheck.java">
+</file>
+<file name="/Users/lyLiu/Documents/code/java/Education/homework/src/main/java/com/ztlsir/shared/validation/Impl/ImageCheckImpl.java">
+</file>
+<file name="/Users/lyLiu/Documents/code/java/Education/homework/src/main/java/com/ztlsir/shared/value/ClassAndGrade.java">
+</file>
+</checkstyle>

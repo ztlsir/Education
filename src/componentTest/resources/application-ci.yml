@@ -1,0 +1,5 @@
+spring:
+  data:
+    mongodb:
+      fileDBUri: mongodb://homework:123456@172.18.0.3:27016/file
+      dataDBUri: mongodb://homework:123456@172.18.0.3:27016/data

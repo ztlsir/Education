@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>HomeworkApplicationService.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">homework</a> &gt; <a href="index.source.html" class="el_package">com.ztlsir.homework.homework</a> &gt; <span class="el_source">HomeworkApplicationService.java</span></div><h1>HomeworkApplicationService.java</h1><pre class="source lang-java linenums">package com.ztlsir.homework.homework;
+
+import com.ztlsir.homework.homework.command.CreateCommand;
+import com.ztlsir.homework.homework.model.HomeworkFactory;
+import lombok.var;
+import org.springframework.stereotype.Component;
+
+@Component
+public class HomeworkApplicationService {
+    private HomeworkFactory homeworkFactory;
+    private HomeworkRepository homeworkRepository;
+
+<span class="fc" id="L13">    public HomeworkApplicationService(HomeworkFactory homeworkFactory, HomeworkRepository homeworkRepository) {</span>
+<span class="fc" id="L14">        this.homeworkFactory = homeworkFactory;</span>
+<span class="fc" id="L15">        this.homeworkRepository = homeworkRepository;</span>
+<span class="fc" id="L16">    }</span>
+
+    public String create(CreateCommand command) {
+<span class="fc" id="L19">        var homework = homeworkFactory.create(command.classAndGrade, command.teacherId, command.content);</span>
+<span class="fc" id="L20">        homeworkRepository.save(homework);</span>
+
+<span class="fc" id="L22">        return homework.getId();</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>
