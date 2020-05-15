@@ -1,2 +1,2 @@
-#Start build process...
+#shut down all dependent docker containers
 ./gradlew dockerDown
