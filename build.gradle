@@ -59,6 +59,9 @@ test {
     useJUnitPlatform()
 }
 
+task dockerDown() {
+}
+
 apply from: "${projectDir}/gradle/docker-compose/docker-compose.gradle"
 apply from: "${projectDir}/gradle/component-test.gradle"
 apply from: "${projectDir}/gradle/api-test.gradle"
