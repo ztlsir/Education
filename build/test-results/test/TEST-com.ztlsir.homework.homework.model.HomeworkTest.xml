@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.ztlsir.homework.homework.model.HomeworkTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-05-03T02:16:45" hostname="CNlyLiu.local" time="0.01">
-  <properties/>
-  <testcase name="should_create_homework()" classname="com.ztlsir.homework.homework.model.HomeworkTest" time="0.01"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
