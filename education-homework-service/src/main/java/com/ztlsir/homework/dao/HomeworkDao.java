@@ -1,7 +1,7 @@
 package com.ztlsir.homework.dao;
 
-import com.ztlsir.homework.entity.Homework;
+import com.ztlsir.homework.entity.HomeworkPO;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface HomeworkDao extends JpaRepository<Homework,String> {
+public interface HomeworkDao extends JpaRepository<HomeworkPO,String> {
 }

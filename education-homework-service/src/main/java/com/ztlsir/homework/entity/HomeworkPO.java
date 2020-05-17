@@ -9,11 +9,11 @@ import javax.persistence.Table;
 @Entity
 @Getter
 @Table(name="Homeworks")
-public class Homework {
-    public Homework() {
+public class HomeworkPO {
+    public HomeworkPO() {
     }
 
-    public Homework(String id, String jsonContent) {
+    public HomeworkPO(String id, String jsonContent) {
         this.id = id;
         this.jsonContent = jsonContent;
     }

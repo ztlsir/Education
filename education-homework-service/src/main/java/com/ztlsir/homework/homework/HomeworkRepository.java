@@ -2,7 +2,7 @@ package com.ztlsir.homework.homework;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.ztlsir.homework.dao.HomeworkDao;
-import com.ztlsir.homework.entity.Homework;
+import com.ztlsir.homework.entity.HomeworkPO;
 import com.ztlsir.shared.model.BaseRepository;
 import lombok.SneakyThrows;
 import lombok.var;
@@ -21,7 +21,7 @@ public class HomeworkRepository extends BaseRepository<com.ztlsir.homework.homew
     @SneakyThrows
     @Override
     protected void doSave(com.ztlsir.homework.homework.model.Homework homework) {
-        homeworkDao.save(new Homework(homework.getId(), objectMapper.writeValueAsString(homework)));
+        homeworkDao.save(new HomeworkPO(homework.getId(), objectMapper.writeValueAsString(homework)));
     }
 
     @SneakyThrows
