@@ -1,1 +1,1 @@
-./gradlew clean bootRun
+./gradlew clean :education-homework-service:bootRun

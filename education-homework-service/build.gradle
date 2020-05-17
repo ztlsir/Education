@@ -1,0 +1,41 @@
+plugins {
+    id 'com.avast.gradle.docker-compose' version "0.10.10"
+    id 'jacoco'
+}
+
+ext {
+    set('springCloudVersion', "Hoxton.SR4")
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.springframework.boot:spring-boot-starter-actuator'
+    implementation 'io.springfox:springfox-swagger-ui:2.9.2'
+    implementation 'io.springfox:springfox-swagger2:2.9.2'
+    implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
+    implementation 'mysql:mysql-connector-java'
+    implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
+
+    runtimeOnly 'com.h2database:h2'
+    testImplementation('org.springframework.boot:spring-boot-starter-test')
+    testImplementation('io.rest-assured:spring-mock-mvc')
+}
+
+dependencyManagement {
+    imports {
+        mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+    }
+}
+
+test {
+    useJUnitPlatform()
+}
+
+task dockerDown() {
+}
+
+apply from: "${projectDir}/gradle/docker-compose/docker-compose.gradle"
+apply from: "${projectDir}/gradle/component-test.gradle"
+apply from: "${projectDir}/gradle/api-test.gradle"
+apply from: "${projectDir}/gradle/jacoco.gradle"
+apply from: "${projectDir}/gradle/version-info.gradle"
