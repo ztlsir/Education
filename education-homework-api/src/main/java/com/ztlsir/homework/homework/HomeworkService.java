@@ -10,9 +10,8 @@ import java.util.Map;
 
 import static org.springframework.http.HttpStatus.CREATED;
 
-@RestController
 @RequestMapping(value = "/homeworks")
-public interface HomeworkController {
+public interface HomeworkService {
 
     @PostMapping
     @ResponseStatus(CREATED)

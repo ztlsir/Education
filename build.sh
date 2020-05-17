@@ -1,2 +1,2 @@
 #Start build process...
-./gradlew clean build
+./gradlew clean :education-homework-service:build

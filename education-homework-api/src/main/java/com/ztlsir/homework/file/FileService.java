@@ -8,9 +8,8 @@ import java.util.Map;
 
 import static org.springframework.http.HttpStatus.CREATED;
 
-@RestController
 @RequestMapping(value = "/files")
-public interface FileController {
+public interface FileService {
     @PostMapping("/upload/image")
     @ResponseStatus(CREATED)
     public Map<String, String> uploadImage(UploadImageCommand uploadImageCommand);

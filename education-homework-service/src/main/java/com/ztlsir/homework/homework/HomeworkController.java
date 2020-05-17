@@ -3,17 +3,18 @@ package com.ztlsir.homework.homework;
 import com.ztlsir.homework.homework.Representation.model.HomeworkRepresentation;
 import com.ztlsir.homework.homework.command.CreateCommand;
 import com.ztlsir.shared.model.PagedResource;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 import javax.validation.Valid;
 import java.util.Map;
 
-import static org.springframework.http.HttpStatus.CREATED;
 import static com.google.common.collect.ImmutableMap.of;
 
 @RestController
-@RequestMapping(value = "/homeworks")
-public class HomeworkController {
+public class HomeworkController implements HomeworkService {
 
     private final HomeworkApplicationService applicationService;
     private final HomeworkRepresentationService representationService;
@@ -25,18 +26,17 @@ public class HomeworkController {
         this.representationService = representationService;
     }
 
-    @PostMapping
-    @ResponseStatus(CREATED)
+    @Override
     public Map<String, String> create(@RequestBody @Valid CreateCommand command) {
         return of("id", applicationService.create(command));
     }
 
-    @GetMapping("/{id}")
+    @Override
     public HomeworkRepresentation byId(@PathVariable(name = "id") String id) {
         return representationService.byId(id);
     }
 
-    @GetMapping
+    @Override
     public PagedResource<HomeworkRepresentation> pagedHomeworks(
             @RequestParam(required = false, defaultValue = "1") int pageIndex,
             @RequestParam(required = false, defaultValue = "10") int pageSize) {
