@@ -3,6 +3,7 @@ package com.ztlsir.homework.homework;
 import com.ztlsir.homework.homework.Representation.model.HomeworkRepresentation;
 import com.ztlsir.homework.homework.command.CreateCommand;
 import com.ztlsir.shared.model.PagedResource;
+import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -10,8 +11,9 @@ import java.util.Map;
 
 import static org.springframework.http.HttpStatus.CREATED;
 
+@FeignClient("homework-service")
 @RequestMapping(value = "/homeworks")
-public interface HomeworkService {
+public interface HomeworkClient {
 
     @PostMapping
     @ResponseStatus(CREATED)

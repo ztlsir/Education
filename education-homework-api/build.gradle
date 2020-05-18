@@ -3,6 +3,10 @@ plugins {
     id 'maven-publish'
 }
 
+dependencies {
+    implementation 'org.springframework.cloud:spring-cloud-starter-openfeign'
+}
+
 jar {
     enabled = true
 }

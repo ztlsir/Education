@@ -14,7 +14,7 @@ import java.util.Map;
 import static com.google.common.collect.ImmutableMap.of;
 
 @RestController
-public class HomeworkController implements HomeworkService {
+public class HomeworkController implements HomeworkClient {
 
     private final HomeworkApplicationService applicationService;
     private final HomeworkRepresentationService representationService;

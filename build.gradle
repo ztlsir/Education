@@ -7,6 +7,10 @@ buildscript {
     }
 }
 
+ext {
+    set('springCloudVersion', "Hoxton.SR4")
+}
+
 allprojects {
     apply plugin: 'idea'
 }
@@ -31,6 +35,12 @@ subprojects {
 
         implementation 'org.springframework.boot:spring-boot-starter-web'
         implementation 'com.google.guava:guava:27.1-jre'
+    }
+
+    dependencyManagement {
+        imports {
+            mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+        }
     }
 
     apply from: "${rootProject.projectDir}/gradle/checkstyle/checkstyle.gradle"

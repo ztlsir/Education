@@ -11,7 +11,7 @@ import java.util.Map;
 import static com.google.common.collect.ImmutableMap.of;
 
 @RestController
-public class FileController implements FileService {
+public class FileController implements FileClient {
 
     private final FileApplicationService fileApplicationService;
     private final FileRepresentationService fileRepresentationService;
