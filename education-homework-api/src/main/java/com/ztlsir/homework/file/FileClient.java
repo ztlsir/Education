@@ -9,7 +9,7 @@ import java.util.Map;
 
 import static org.springframework.http.HttpStatus.CREATED;
 
-@FeignClient("homework-service")
+@FeignClient(value = "homework-service",contextId = "FileClient")
 @RequestMapping(value = "/files")
 public interface FileClient {
     @PostMapping("/upload/image")

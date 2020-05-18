@@ -11,7 +11,7 @@ import java.util.Map;
 
 import static org.springframework.http.HttpStatus.CREATED;
 
-@FeignClient("homework-service")
+@FeignClient(value = "homework-service",contextId = "HomeworkClient")
 @RequestMapping(value = "/homeworks")
 public interface HomeworkClient {
 
