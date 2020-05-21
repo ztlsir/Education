@@ -1,0 +1,24 @@
+server:
+  port: 80
+
+spring:
+  data:
+    mongodb:
+      fileDBUri: mongodb://homework:123456@172.18.2.2:27017/file
+      dataDBUri: mongodb://homework:123456@172.18.2.2:27017/data
+  data-source:
+    homework:
+      jdbc-url: jdbc:mysql://172.18.3.2:3306/homework
+      username: root
+      password: 123456
+      driver-class-name: com.mysql.cj.jdbc.Driver
+    education:
+      jdbc-url: jdbc:mysql://172.18.3.2:3306/education
+      username: root
+      password: 123456
+      driver-class-name: com.mysql.cj.jdbc.Driver
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://eureka.peer1/eureka/,http://eureka.peer2/eureka/,http://eureka.peer3/eureka/
