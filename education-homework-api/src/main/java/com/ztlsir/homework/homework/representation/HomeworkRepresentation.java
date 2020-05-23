@@ -1,4 +1,4 @@
-package com.ztlsir.homework.homework.Representation.model;
+package com.ztlsir.homework.homework.representation;
 
 import com.ztlsir.shared.value.ClassAndGrade;
 import lombok.AccessLevel;

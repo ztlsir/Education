@@ -1,6 +1,6 @@
 package com.ztlsir.homework.file;
 
-import com.ztlsir.homework.file.Command.UploadImageCommand;
+import com.ztlsir.homework.file.command.UploadImageCommand;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;

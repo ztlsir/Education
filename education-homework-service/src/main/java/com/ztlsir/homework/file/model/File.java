@@ -1,6 +1,6 @@
 package com.ztlsir.homework.file.model;
 
-import com.ztlsir.homework.file.Representation.model.FileRepresentation;
+import com.ztlsir.homework.file.representation.FileRepresentation;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;

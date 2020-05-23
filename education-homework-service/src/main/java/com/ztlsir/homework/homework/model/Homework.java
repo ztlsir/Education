@@ -1,6 +1,6 @@
 package com.ztlsir.homework.homework.model;
 
-import com.ztlsir.homework.homework.Representation.model.HomeworkRepresentation;
+import com.ztlsir.homework.homework.representation.HomeworkRepresentation;
 import com.ztlsir.shared.value.ClassAndGrade;
 import lombok.Builder;
 import lombok.Getter;

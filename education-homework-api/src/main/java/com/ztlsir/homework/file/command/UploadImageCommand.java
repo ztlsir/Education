@@ -1,4 +1,4 @@
-package com.ztlsir.homework.file.Command;
+package com.ztlsir.homework.file.command;
 
 import com.ztlsir.shared.validation.ImageCheck;
 import lombok.Data;

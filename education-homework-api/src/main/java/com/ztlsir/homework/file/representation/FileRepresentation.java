@@ -1,4 +1,4 @@
-package com.ztlsir.homework.file.Representation.model;
+package com.ztlsir.homework.file.representation;
 
 import lombok.Value;
 

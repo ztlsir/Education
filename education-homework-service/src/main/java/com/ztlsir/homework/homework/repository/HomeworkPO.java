@@ -1,4 +1,4 @@
-package com.ztlsir.homework.entity;
+package com.ztlsir.homework.homework.repository;
 
 import lombok.Getter;
 

@@ -1,6 +1,6 @@
 package com.ztlsir.homework.file;
 
-import com.ztlsir.homework.config.mongoTemplate.MongoTemplateFactory;
+import com.ztlsir.homework.common.utils.mongo.template.MongoTemplateFactory;
 import com.ztlsir.homework.file.model.File;
 import com.ztlsir.shared.model.BaseRepository;
 import org.springframework.beans.factory.annotation.Qualifier;

@@ -1,4 +1,4 @@
-package com.ztlsir.homework.config.mongoTemplate;
+package com.ztlsir.homework.common.utils.mongo.template;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

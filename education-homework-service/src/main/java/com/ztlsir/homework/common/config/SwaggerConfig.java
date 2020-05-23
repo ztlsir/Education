@@ -1,4 +1,4 @@
-package com.ztlsir.homework.config;
+package com.ztlsir.homework.common.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

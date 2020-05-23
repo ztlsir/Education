@@ -1,6 +1,6 @@
 package com.ztlsir.homework.file;
 
-import com.ztlsir.homework.file.Command.UploadImageCommand;
+import com.ztlsir.homework.file.command.UploadImageCommand;
 import com.ztlsir.homework.file.model.File;
 import lombok.SneakyThrows;
 import lombok.var;

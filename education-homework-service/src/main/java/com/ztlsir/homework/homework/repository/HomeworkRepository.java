@@ -1,8 +1,6 @@
-package com.ztlsir.homework.homework;
+package com.ztlsir.homework.homework.repository;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.ztlsir.homework.dao.HomeworkDao;
-import com.ztlsir.homework.entity.HomeworkPO;
 import com.ztlsir.shared.model.BaseRepository;
 import lombok.SneakyThrows;
 import lombok.var;

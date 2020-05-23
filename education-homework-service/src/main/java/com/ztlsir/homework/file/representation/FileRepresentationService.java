@@ -1,6 +1,6 @@
-package com.ztlsir.homework.file;
+package com.ztlsir.homework.file.representation;
 
-import com.ztlsir.homework.file.Representation.model.FileRepresentation;
+import com.ztlsir.homework.file.FileRepository;
 import org.springframework.stereotype.Component;
 
 @Component

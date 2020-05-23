@@ -11,7 +11,7 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
     implementation 'mysql:mysql-connector-java'
     implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
-    implementation 'com.ztlsir:education-homework-api:0.0.1-20200518.050222-4'
+    implementation 'com.ztlsir:education-homework-api:0.0.1-20200522.104803-6'
 
     runtimeOnly 'com.h2database:h2'
     testImplementation('org.springframework.boot:spring-boot-starter-test')

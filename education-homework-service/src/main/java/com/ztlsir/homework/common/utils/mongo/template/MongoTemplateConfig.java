@@ -1,4 +1,4 @@
-package com.ztlsir.homework.config.mongoTemplate;
+package com.ztlsir.homework.common.utils.mongo.template;
 
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;

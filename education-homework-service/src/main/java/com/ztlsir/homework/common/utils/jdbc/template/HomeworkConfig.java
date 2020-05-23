@@ -1,4 +1,4 @@
-package com.ztlsir.homework.config.jdbcTemplate;
+package com.ztlsir.homework.common.utils.jdbc.template;
 
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.autoconfigure.orm.jpa.HibernateProperties;
@@ -7,6 +7,7 @@ import org.springframework.boot.autoconfigure.orm.jpa.JpaProperties;
 import org.springframework.boot.orm.jpa.EntityManagerFactoryBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
@@ -20,16 +21,16 @@ import java.util.Map;
 @Configuration
 @EnableTransactionManagement
 @EnableJpaRepositories(
-        entityManagerFactoryRef = "entityManagerFactoryEducation",
-        transactionManagerRef = "transactionManagerEducation",
-        basePackages = {"com.ztlsir.education.dao"})
-public class EducationConfig {
+        entityManagerFactoryRef = "entityManagerFactoryHomework",
+        transactionManagerRef = "transactionManagerHomework",
+        basePackages = {"com.ztlsir.homework.homework.repository"})
+public class HomeworkConfig {
     private DataSource dataSource;
     private JpaProperties jpaProperties;
     private HibernateProperties hibernateProperties;
 
-    public EducationConfig(
-            @Qualifier("education") DataSource dataSource,
+    public HomeworkConfig(
+            @Qualifier("homework") DataSource dataSource,
             JpaProperties jpaProperties,
             HibernateProperties hibernateProperties) {
         this.dataSource = dataSource;
@@ -37,22 +38,25 @@ public class EducationConfig {
         this.hibernateProperties = hibernateProperties;
     }
 
-    @Bean(name = "entityManagerEducation")
+    @Primary
+    @Bean(name = "entityManagerHomework")
     public EntityManager entityManager(EntityManagerFactoryBuilder builder) {
         return entityManagerFactory(builder).getObject().createEntityManager();
     }
 
-    @Bean(name = "entityManagerFactoryEducation")
+    @Primary
+    @Bean(name = "entityManagerFactoryHomework")
     public LocalContainerEntityManagerFactoryBean entityManagerFactory(EntityManagerFactoryBuilder builder) {
         return builder
                 .dataSource(dataSource)
                 .properties(getVendorProperties())
-                .packages("com.ztlsir.education.entity")
-                .persistenceUnit("educationPersistenceUnit")
+                .packages("com.ztlsir.homework.homework.repository")
+                .persistenceUnit("homeworkPersistenceUnit")
                 .build();
     }
 
-    @Bean(name = "transactionManagerEducation")
+    @Primary
+    @Bean(name = "transactionManagerHomework")
     public PlatformTransactionManager transactionManager(EntityManagerFactoryBuilder builder) {
         return new JpaTransactionManager(entityManagerFactory(builder).getObject());
     }

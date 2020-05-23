@@ -1,4 +1,4 @@
-package com.ztlsir.homework.config.jdbcTemplate;
+package com.ztlsir.homework.common.utils.jdbc.template;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.jdbc.DataSourceBuilder;

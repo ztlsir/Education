@@ -2,9 +2,11 @@ package com.ztlsir.homework.homework;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.collect.Lists;
-import com.ztlsir.homework.dao.HomeworkDao;
-import com.ztlsir.homework.entity.HomeworkPO;
-import com.ztlsir.homework.homework.Representation.model.HomeworkRepresentation;
+import com.ztlsir.homework.homework.repository.HomeworkDao;
+import com.ztlsir.homework.homework.repository.HomeworkPO;
+import com.ztlsir.homework.homework.repository.HomeworkRepository;
+import com.ztlsir.homework.homework.representation.HomeworkRepresentation;
+import com.ztlsir.homework.homework.representation.HomeworkRepresentationService;
 import com.ztlsir.shared.model.PagedResource;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

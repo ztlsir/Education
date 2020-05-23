@@ -1,7 +1,8 @@
 package com.ztlsir.homework.homework;
 
-import com.ztlsir.homework.homework.Representation.model.HomeworkRepresentation;
 import com.ztlsir.homework.homework.command.CreateCommand;
+import com.ztlsir.homework.homework.representation.HomeworkRepresentation;
+import com.ztlsir.homework.homework.representation.HomeworkRepresentationService;
 import com.ztlsir.shared.model.PagedResource;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;

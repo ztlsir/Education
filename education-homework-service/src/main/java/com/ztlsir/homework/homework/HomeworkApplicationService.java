@@ -2,6 +2,7 @@ package com.ztlsir.homework.homework;
 
 import com.ztlsir.homework.homework.command.CreateCommand;
 import com.ztlsir.homework.homework.model.HomeworkFactory;
+import com.ztlsir.homework.homework.repository.HomeworkRepository;
 import lombok.var;
 import org.springframework.stereotype.Component;
 
