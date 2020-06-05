@@ -5,7 +5,9 @@ plugins {
 
 dependencies {
     implementation 'org.springframework.cloud:spring-cloud-starter-openfeign'
-    implementation 'org.springframework.boot:spring-boot-starter-validation'
+    implementation 'com.ztlsir:education-shared-model:0.0.1-20200604.093945-2'
+    implementation 'com.ztlsir:education-shared-validation:0.0.1-20200604.093955-1'
+    implementation 'com.ztlsir:education-shared-value:0.0.1-20200604.094004-2'
 }
 
 jar {
