@@ -1,6 +1,7 @@
 package com.ztlsir.homework.file.model;
 
 import com.ztlsir.homework.file.representation.FileRepresentation;
+import com.ztlsir.shared.model.BaseAggregate;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
@@ -14,7 +15,7 @@ import java.util.UUID;
 @Setter
 @Builder
 @Document
-public class File {
+public class File extends BaseAggregate {
     @Id
     private String id;
     private String name;

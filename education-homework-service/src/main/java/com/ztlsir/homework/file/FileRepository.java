@@ -2,6 +2,7 @@ package com.ztlsir.homework.file;
 
 import com.ztlsir.homework.common.utils.mongo.template.MongoTemplateFactory;
 import com.ztlsir.homework.file.model.File;
+import com.ztlsir.shared.event.DomainEventSender;
 import com.ztlsir.shared.model.BaseRepository;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.data.mongodb.core.MongoTemplate;
@@ -13,7 +14,10 @@ public class FileRepository extends BaseRepository<File> {
 
     private final MongoTemplate mongoTemplate;
 
-    public FileRepository(@Qualifier(MongoTemplateFactory.FILE_DATABASE_INJECT_NAME) MongoTemplate mongoTemplate) {
+    public FileRepository(
+            @Qualifier(MongoTemplateFactory.FILE_DATABASE_INJECT_NAME) MongoTemplate mongoTemplate,
+            DomainEventSender sender) {
+        super(sender);
         this.mongoTemplate = mongoTemplate;
     }
 

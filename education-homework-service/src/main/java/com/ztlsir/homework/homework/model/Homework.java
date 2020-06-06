@@ -1,6 +1,7 @@
 package com.ztlsir.homework.homework.model;
 
 import com.ztlsir.homework.homework.representation.HomeworkRepresentation;
+import com.ztlsir.shared.model.BaseAggregate;
 import com.ztlsir.shared.value.ClassAndGrade;
 import lombok.Builder;
 import lombok.Getter;
@@ -11,7 +12,7 @@ import static java.time.Instant.now;
 
 @Getter
 @Builder
-public class Homework {
+public class Homework extends BaseAggregate {
     private String id;
     private ClassAndGrade classAndGrade;
     private String teacherId;

@@ -5,11 +5,13 @@ import com.ztlsir.homework.homework.command.CreateCommand;
 import com.ztlsir.homework.homework.model.Homework;
 import com.ztlsir.homework.homework.model.HomeworkStatus;
 import com.ztlsir.homework.homework.repository.HomeworkRepository;
+import com.ztlsir.shared.event.DomainEventSender;
 import com.ztlsir.shared.value.ClassAndGrade;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -20,6 +22,9 @@ import static org.springframework.boot.test.context.SpringBootTest.WebEnvironmen
 public class HomeworkControllerApiTest extends BaseApiTest {
     @Autowired
     private HomeworkRepository homeworkRepository;
+
+    @MockBean
+    private DomainEventSender sender;
 
     @Test
     public void should_save_homework() {
