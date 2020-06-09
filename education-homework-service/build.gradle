@@ -12,6 +12,9 @@ dependencies {
     implementation 'mysql:mysql-connector-java'
     implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
 
+    implementation 'org.springframework.cloud:spring-cloud-sleuth-zipkin'
+    implementation 'org.springframework.cloud:spring-cloud-starter-stream-rabbit'
+
     implementation 'com.ztlsir:education-homework-api:0.0.1-20200605.021406-7'
     implementation 'com.ztlsir:education-shared-model:0.0.1-20200605.042953-3'
     implementation 'com.ztlsir:education-shared-value:0.0.1-20200604.094004-2'
